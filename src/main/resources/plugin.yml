@@ -1,0 +1,62 @@
+name: "Attributum"
+main: "online.christopherstocks.attributum.Attributum"
+version: "6.1.0.0"
+description: "The Ultimate Minecraft Roleplay Attribute Plugin"
+authors: ["Highchrisben", "Bean274"]
+website: "https://christopherstocks.online"
+softdepend: [PlaceholderAPI]
+
+permissions:
+  attributum.player:
+    description: "The Base attributum Permission"
+    default: true
+    children:
+      - "attributum.use"
+      - "attributum.slot"
+      - "attributum.display"
+      - "attributum.alter"
+  attributum.staff:
+    description: "The Staff attributum Permission"
+    default: op
+    children:
+      - "attributum.reload"
+      - "attributum.slot.other"
+      - "attributum.debug"
+      - "attributum.update"
+      - "attributum.display.other"
+      - "attributum.reload"
+      - "attributum.reset"
+      - "attributum.reset.other"
+      - "attributum.delete"
+  attributum.alter:
+    description: "Allows for altering of points"
+  attributum.use:
+    description: "Allows use of the attributum command and creation of storage for a player - required"
+  attributum.reload:
+    description: "Allows for reloading"
+  attributum.slot:
+    description: "Allows for using the slot command, if enabled"
+  attributum.slot.other:
+    description: "Allows for altering the slot of another"
+  attributum.debug:
+    description: "Allows for debugging the config using /attributum debug"
+  attributum.update:
+    description: "Notifies if there is an update or not on each login for anyone with the permission"
+  attributum.display:
+    description: "Allows for viewing; stats, points, race and class!"
+  attributum.display.other:
+    description: "Allows for viewing others display"
+  attributum.reset:
+    description: "Allows for resetting their attributum slot"
+  attributum.reset.other:
+    description: "Allows for resetting other's attributum slots"
+  attributum.delete:
+    description: "Allows for deleting old records (using inactive days from config)"
+
+commands:
+  attributum:
+    description: The Base Attributum Command
+    permission: attributum.use
+    aliases:
+      - "attr"
+    permission-message: "You do not have permission to use this command!"

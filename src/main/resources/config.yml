@@ -1,0 +1,87 @@
+# Storage
+## Connection Details
+## (Note: Do not change these details while the plugin is enabled)
+host: "localhost"
+port: 3306
+database: "Attributum"
+table_prefix: "attributum_"
+username: "root"
+password: "password"
+
+## MySQL is currently the only Storage supported - SQLite is in testing, please report if it works.
+storage: MySQL
+
+## How often should inactive players be purged (in days) - 0 is never
+## This occurs once per restart of the Plugin/On command
+inactive-days: 0
+
+# This will be used to delete stats which are not in use
+attributes:
+  - Defence
+  - Evasion
+  - Hitpoints
+  - Regeneration
+  - Movement
+  - Grit
+  - Stamina
+  - Sorcery
+
+# Allows the Plugin to notify you when updates are available
+update-enabled: true
+
+# Allows for updates of beta versions, this will not matter if you are running a beta already
+beta-version: false
+
+# Allocates a Player the amount of slots defined - Setting this to 0 or below will default to 1
+slots: 1
+
+# Set this to true if another plugin is handling slots through the Storage Methods
+slot-handler: false
+
+# Allows for PlaceholderAPI to be used, this will alter itself
+placeholders: false
+
+# New Messages
+update: "&e[&fAttributum&e]&f A New Update is available"
+no-update: "&e[&fAttributum&e]&f No New Update is available"
+sender: "&e[&fAttributum&e]&f You have to be a player"
+help: "&e[&fAttributum&e]&f Please use '/attributum help' for more information about each command!"
+slot-disabled: "&e[&fAttributum&e]&f Slots are being handled by another plugin"
+slot-singular: "&e[&fAttributum&e]&f You can only access one slot"
+permission: "&e[&fAttributum&e]&f You do not have the correct permission for this"
+slot: "&e[&fAttributum&e]&f Currently using Slot :slot:"
+slot-invalid: "&e[&fAttributum&e]&f The slot you entered is not in use or inaccessible"
+player-exist: "&e[&fAttributum&e]&f That player does not seem to exist at the current moment"
+switch: "&e[&fAttributum&e]&f You are now using Slot :slot:"
+switch-other: "&e[&fAttributum&e]&f They are now using Slot :slot:"
+reload: "&e[&fAttributum&e]&f The Config has now been reloaded"
+help-invalid: "&e[&fAttributum&e]&f That page does not exist or is not in use"
+reset: "&e[&fAttributum&e]&f Your slot :slot: has been reset"
+reset-other: "&e[&fAttributum&e]&f That players slot :slot: has been reset"
+delete: "&e[&fAttributum&e]&f All inactive players are now being deleted"
+delete-0: "&e[&fAttributum&e]&f Inactive Days has not been configured"
+attribute-invalid: "&e[&fAttributum&e]&f That attribute is invalid"
+attributum-reset: "&e[&fAttributum&e]&f Your slot :slot: attribute have been reset"
+attributum-reset-other: "&e[&fAttributum&e]&f That players slot :slot: attribute have been reset"
+attributum-alter: "&e[&fAttributum&e]&f Your slot :slot: attribute have been altered"
+attributum-alter-other: "&e[&fAttributum&e]&f That players slot :slot: attribute have been altered"
+
+# Display Page
+display:
+  - "&e[&fAttributum&e]&f :player:'s Attributes for Slot :slot:"
+  - "&fDefence: &c:Defence: &e| &fEvasion: &a:Evasion: &e| &fRegeneration: &b:Regeneration:"
+  - "&fGrit: &c:Grit: &e| &fStamina: &a:Stamina: &e| &fSorcery: &b:Regeneration:"
+  - "&fMovement: &7:Movement: &e| &fHitpoints: &4:Hitpoints:"
+
+# Help Pages
+help-items: 9
+help-pages:
+  - "&e[&fAttributum Help&e]&f :page: of &e:pages:"
+  - "&e o - means optional | <-> means switchable | a - means alternate"
+  - "&f/attributum help [page] - shows the help command"
+  - "&e/attributum debug ...parameters... - displays the config values"
+  - "&f/attributum slot [o:player]<->[o:slot] - shows and sets the slots of self/others "
+  - "&e/attributum reload - reloads the config"
+  - "&f/attributum reset [o:slot]<->[o:player] - resets all of self/others slot"
+  - "&e/attributum delete - deletes inactive players"
+  - "&f/attributum alter [attribute] [o:player]<->[o:amount] - alters attributes"
