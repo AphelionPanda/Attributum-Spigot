@@ -21,10 +21,14 @@ class Attributum : JavaPlugin() {
         saveDefaultConfig(); instance = this
         val pluginManager = server.pluginManager; val config = Config(); val storage: Storage = config.getStorage()
         config.enableSlots(); storage.createDatabase()
+        if (config.getBoolean("sql-update")){
+            storage.updatePlugin()
+            config.set("sql-update", false)
+        }
         pluginManager.registerEvents(PlayerJoin(), this)
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             getConfig().set("placeholders", true)
-            Placeholders(this).hook()
+            Placeholders().register()
         } else getConfig().set("placeholders", false)
         if (config.getInt("slots") < 1) config.set("slots", 1)
         getCommand("attributum")!!.setExecutor(AttributesCommand())

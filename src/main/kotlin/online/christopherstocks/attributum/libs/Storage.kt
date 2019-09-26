@@ -12,6 +12,7 @@ abstract class Storage {
 
     // Async
     abstract fun createDatabase()
+    abstract fun updatePlugin()
     abstract fun updateAttributes()
     abstract fun deleteInactivePlayers()
     abstract fun createPlayer(player: Player)

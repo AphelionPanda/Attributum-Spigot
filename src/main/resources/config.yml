@@ -11,6 +11,9 @@ password: "password"
 ## MySQL is currently the only Storage supported - SQLite is in testing, please report if it works.
 storage: MySQL
 
+## Enable this if you think there are SQL updates that need ran upon updating to a new version
+sql-update: true
+
 ## How often should inactive players be purged (in days) - 0 is never
 ## This occurs once per restart of the Plugin/On command
 inactive-days: 0
